@@ -1,9 +1,10 @@
-package Overlapping;
+package overlappingInheritance;
 
 import java.time.LocalDate;
 import java.util.EnumSet;
 
 public class Driver extends Employee{
+
     public enum DriverTypes { COMBINE, TRUCK }
     private EnumSet<DriverTypes> driverTypes;
 
@@ -12,7 +13,6 @@ public class Driver extends Employee{
 
     private String truckDriversLicense;
     private Double truckDriverWorkingHoursPerWeek;
-
 
     public Driver(String name, String secondName, LocalDate birthDate, LocalDate hireDate,
                   EnumSet<DriverTypes> driverTypes, String combineDriversLicense, String truckDriversLicense,
@@ -118,37 +118,14 @@ public class Driver extends Employee{
     public String toString(){
         StringBuilder sb = new StringBuilder(super.toString());
         if(hasDriverType(DriverTypes.COMBINE)){
-            sb.append("\t\t\tCombine driver license: " + combineDriversLicense + "\n");
-            sb.append("\t\t\tWeek working hours like a combine driver: " + combineDriverWeekWorkingHours + "\n");
+            sb.append("Combine driver license: " + combineDriversLicense + "\n");
+            sb.append("Week working hours like a combine driver: " + combineDriverWeekWorkingHours + "\n");
         }
         if(hasDriverType(DriverTypes.TRUCK)){
-            sb.append("\t\t\tTruck driver license: " + truckDriversLicense + "\n");
-            sb.append("\t\t\tWeek working hours like a truck driver: " + truckDriverWorkingHoursPerWeek + "\n");
+            sb.append("Truck driver license: " + truckDriversLicense + "\n");
+            sb.append("Week working hours like a truck driver: " + truckDriverWorkingHoursPerWeek + "\n");
         }
-        sb.append("\t\t\tTotal working hours per month: " + getWorkingHoursPerMonth() + "\n");
+        sb.append("Total working hours per month: " + getWorkingHoursPerMonth() + "\n");
         return sb.toString();
     }
 }
-
-
-
-
-/*
-    public void addDriverType(DriverTypes driverType){
-        if(driverType == null){
-            throw new IllegalArgumentException("DriverType can't be null!");
-        }
-        if(!driverTypes.contains(driverType)){
-            driverTypes.add(driverType);
-        }
-    }
-
-    public void removeDriveType(DriverTypes driveType){
-        if(driveType == null){
-            throw new IllegalArgumentException("DriverType can't be null!");
-        }
-        if(driverTypes.contains(driveType)){
-            driverTypes.remove(driveType);
-        }
-    }
- */

@@ -1,9 +1,8 @@
-package Overlapping;
+package overlappingInheritance;
 
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
 
 public abstract class Person{
     private String firstName;
@@ -46,10 +45,10 @@ public abstract class Person{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\t\t\t***********************************\n");
-        sb.append("\t\t\tFull name: " + firstName + " " + secondName + "\n");
-        sb.append("\t\t\tBirth date: " + birthDate + "\n");
-        sb.append("\t\t\tAge: " + getAge() + "\n");
+        sb.append("***********************************\n");
+        sb.append("Full name: " + firstName + " " + secondName + "\n");
+        sb.append("Birth date: " + birthDate + "\n");
+        sb.append("Age: " + getAge() + "\n");
         return sb.toString();
     }
 }
